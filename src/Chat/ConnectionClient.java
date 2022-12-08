@@ -20,9 +20,9 @@ public class ConnectionClient {
     Socket socketServer = null;
     ObjectInputStream inputFromServer = null;
 
-    ConnectionClient() throws IOException {
+    ConnectionClient(String addressServer, int portServer) throws IOException {
 
-        socketServer = new Socket("192.168.1.102", 12345);
+        socketServer = new Socket(addressServer, portServer);
         inputFromServer = new ObjectInputStream(socketServer.getInputStream());
         
     }
